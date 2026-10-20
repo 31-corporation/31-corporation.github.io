@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="삼일정공 - 기계 부품 제작, 선반·밀링 가공, 용접, 농기계 및 지게차 부품 수리">
 <title>삼일정공 | 기계 부품 제작·가공·수리</title>
 
 <style>
@@ -10,189 +12,88 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, "Malgun Gothic", sans-serif;
-  color: #222;
+  color: #252a27;
   line-height: 1.7;
 }
 
+a {
+  color: inherit;
+}
+
+/* 메인 첫 화면 */
 .hero {
-  min-height: 520px;
+  min-height: 570px;
+  min-height: min(720px, 90vh);
   background:
-    linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
-    url('main-bg.png') center center / cover no-repeat;
+    linear-gradient(
+      90deg,
+      rgba(10, 28, 20, 0.78),
+      rgba(10, 28, 20, 0.32)
+    ),
+    url("main-bg.png") center center / cover no-repeat;
   color: white;
+}
+
+/* 상단 회사명 및 메뉴 */
+.topbar {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 22px 6%;
+  background: rgba(13, 42, 29, 0.48);
 }
 
-header {
-  background: rgba(23,77,53,0.88);
-  text-align: center;
-  padding: 24px 15px;
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 34px;
-}
-
-header p {
-  margin: 5px 0 0;
+.logo span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.85;
 }
 
 nav {
-  background: rgba(18,59,42,0.9);
-  text-align: center;
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 12px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
+nav a:hover {
+  color: #d3e6b5;
+}
+
+/* 메인 문구 */
 .hero-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 45px 18px;
-}
-
-.hero-content h2 {
-  font-size: 30px;
-  margin: 0 0 15px;
-}
-
-.hero-content p {
-  font-size: 17px;
-  margin: 0;
-}
-
-section {
-  max-width: 900px;
+  max-width: 1150px;
   margin: auto;
-  padding: 35px 20px;
+  padding: 105px 6% 120px;
 }
 
-section h2 {
-  color: #174d35;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-}
-
-.item {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 18px;
-  text-align: center;
-  background: white;
-}
-
-.contact {
-  background: #174d35;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-}
-
-.contact h2 {
-  color: white;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #eee;
-  font-size: 13px;
-}
-
-@media (max-width: 600px) {
-  .hero {
-    min-height: 460px;
-  }
-
-  header h1 {
-    font-size: 29px;
-  }
-
-  .hero-content h2 {
-    font-size: 25px;
-  }
-
-  nav a {
-    margin: 0 7px;
-    font-size: 14px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="hero">
-
-  <header>
-    <h1>삼일정공</h1>
-    <p>기계 부품 제작 · 가공 · 수리 전문</p>
-  </header>
-
-  <nav>
-    <a href="#about">회사소개</a>
-    <a href="#service">주요업무</a>
-    <a href="#contact">오시는 길</a>
-  </nav>
-
-  <div class="hero-content">
-    <h2>정밀한 가공, 믿을 수 있는 기술</h2>
-    <p>
-      다양한 기계 부품 제작부터 가공 및 수리까지<br>
-      삼일정공이 성실하게 함께하겠습니다.
-    </p>
-  </div>
-
-</div>
-
-<section id="about">
-  <h2>회사소개</h2>
-  <p>
-    삼일정공은 기계 부품 제작·가공·수리를 전문으로 하는 업체입니다.
-    오랜 현장 경험과 기술을 바탕으로 고객의 다양한 작업 요구에
-    성실하게 대응하겠습니다.
-  </p>
-</section>
-
-<section id="service">
-  <h2>주요 업무</h2>
-  <div class="services">
-    <div class="item">⚙️<br><b>기계 부품 제작</b></div>
-    <div class="item">🔩<br><b>선반 · 밀링 가공</b></div>
-    <div class="item">🛠️<br><b>기계 부품 수리</b></div>
-    <div class="item">🚜<br><b>농기계 수리</b></div>
-    <div class="item">🏗️<br><b>지게차 부품</b></div>
-    <div class="item">🔥<br><b>용접 · 철구조물</b></div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>문의 및 오시는 길</h2>
-  <p>충청북도 음성군 대소읍 오태로 42-14</p>
-  <p>전화 문의는 방문 전 확인해 주세요.</p>
-</section>
-
-<footer>
-  © 삼일정공. All rights reserved.
-</footer>
-
-</body>
-</html>
-
+.eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d3e6b

@@ -1,453 +1,211 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="삼일정공 - 기계 부품 제작, 선반·밀링 가공, 용접, 농기계 및 지게차 부품 수리">
-<title>삼일정공 | 기계 부품 제작·가공·수리</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="삼일정공 - 기계부품 제작, 가공 및 수리">
+  <title>삼일정공 | 기계부품 제작·가공·수리</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, "Malgun Gothic", sans-serif;
-  color: #252a27;
-  line-height: 1.7;
-}
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: #fff;
+      color: #222;
+    }
 
-a {
-  color: inherit;
-}
+    header {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      background: #263b32;
+    }
 
-/* 메인 첫 화면 */
-.hero {
-  min-height: 570px;
-  min-height: min(720px, 90vh);
-  background:
-    linear-gradient(
-      90deg,
-      rgba(10, 28, 20, 0.78),
-      rgba(10, 28, 20, 0.32)
-    ),
-    url("main-bg.png") center center / cover no-repeat;
-  color: white;
-}
+    .header-inner {
+      max-width: 1200px;
+      min-height: 76px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-/* 상단 회사명 및 메뉴 */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding: 22px 6%;
-  background: rgba(13, 42, 29, 0.48);
-}
+    .logo {
+      color: #70c58a;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
 
-.logo {
-  color: white;
-  text-decoration: none;
-  font-size: 27px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  white-space: nowrap;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
 
-.logo span {
-  display: block;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  opacity: 0.85;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
+    nav a:hover {
+      color: #8de3a4;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-}
+    nav .phone {
+      padding: 10px 14px;
+      border: 1px solid #70c58a;
+      border-radius: 5px;
+    }
 
-nav a:hover {
-  color: #d3e6b5;
-}
+    main {
+      width: 100%;
+    }
 
-/* 메인 문구 */
-.hero-content {
-  max-width: 1150px;
-  margin: auto;
-  padding: 105px 6% 120px;
-}
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      line-height: 0;
+    }
 
-.eyebrow {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #d3e6b5;
-}
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-.hero-content h1 {
-  margin: 18px 0;
-  font-size: clamp(32px, 4.5vw, 52px);
-  line-height: 1.35;
-  letter-spacing: -1.5px;
-}
+    /*
+      이미지 안의 '주요업무 보기 →' 버튼 위치에 맞춘
+      투명 클릭 영역입니다. 실제 위치는 확인 후 조정합니다.
+    */
+    .hero-button {
+      position: absolute;
+      left: 7%;
+      top: 76%;
+      width: 27%;
+      height: 10%;
+      display: block;
+      cursor: pointer;
+      border-radius: 4px;
+    }
 
-.hero-content p {
-  margin: 0;
-  font-size: 17px;
-  color: rgba(255,255,255,0.92);
-}
+    .hero-button:focus-visible {
+      outline: 3px solid #70c58a;
+      outline-offset: 3px;
+    }
 
-.hero-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 25px;
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 4px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-}
+    footer {
+      padding: 26px 20px;
+      background: #263b32;
+      color: #ddd;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
 
-.hero-button:hover {
-  background: white;
-  color: #174d35;
-}
+    footer a {
+      color: #8de3a4;
+      text-decoration: none;
+    }
 
-/* 공통 섹션 */
-section {
-  padding: 75px 6%;
-}
+    @media (max-width: 700px) {
+      .header-inner {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
 
-.section-inner {
-  max-width: 1100px;
-  margin: auto;
-}
+      .logo {
+        font-size: 23px;
+      }
 
-.section-label {
-  color: #608269;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
 
-.section-title {
-  margin: 8px 0 18px;
-  color: #174d35;
-  font-size: 30px;
-  letter-spacing: -1px;
-}
+      nav a {
+        font-size: 13px;
+      }
 
-.section-description {
-  max-width: 700px;
-  color: #606660;
-}
+      nav .phone {
+        padding: 7px 9px;
+      }
 
-/* 회사소개 */
-.about {
-  background: #fff;
-}
+      .hero-button {
+        left: 7%;
+        top: 76%;
+        width: 34%;
+        height: 10%;
+      }
+    }
+  </style>
 
-/* 주요 업무 */
-.services-section {
-  background: #f4f6f3;
-}
+  <script>
+    // 홈페이지를 열거나 새로고침하면 맨 위에서 시작
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 32px;
-}
-
-.service-card {
-  min-height: 150px;
-  padding: 25px 22px;
-  border: 1px solid #e2e7e1;
-  border-radius: 7px;
-  background: white;
-}
-
-.service-number {
-  color: #71947b;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.service-card h3 {
-  margin: 10px 0 5px;
-  color: #174d35;
-  font-size: 19px;
-}
-
-.service-card p {
-  margin: 0;
-  color: #737873;
-  font-size: 14px;
-}
-
-/* 문의 및 주소 */
-.contact {
-  background: #174d35;
-  color: white;
-}
-
-.contact .section-title {
-  color: white;
-}
-
-.contact .section-description {
-  color: rgba(255,255,255,0.82);
-}
-
-.address {
-  margin-top: 22px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* 하단 */
-footer {
-  padding: 20px;
-  background: #123b2a;
-  color: rgba(255,255,255,0.75);
-  text-align: center;
-  font-size: 12px;
-}
-
-/* 태블릿 */
-@media (max-width: 800px) {
-  .topbar {
-    padding: 18px 5%;
-    gap: 15px;
-  }
-
-  nav {
-    gap: 15px;
-  }
-
-  nav a {
-    font-size: 14px;
-  }
-
-  .hero-content {
-    padding: 95px 7% 105px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* 스마트폰 */
-@media (max-width: 520px) {
-  .hero {
-    min-height: 570px;
-    background-position: 58% center;
-  }
-
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 17px 6%;
-  }
-
-  .logo {
-    font-size: 24px;
-  }
-
-  .logo span {
-    font-size: 10px;
-  }
-
-  nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  nav a {
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  .hero-content {
-    padding: 100px 6% 85px;
-  }
-
-  .eyebrow {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  .hero-content h1 {
-    font-size: 32px;
-    letter-spacing: -1px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  section {
-    padding: 52px 6%;
-  }
-
-  .section-title {
-    font-size: 26px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 24px;
-  }
-
-  .service-card {
-    min-height: auto;
-    padding: 20px;
-  }
-
-  .service-card h3 {
-    font-size: 18px;
-  }
-}
-</style>
+    window.addEventListener("pageshow", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </head>
 
 <body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">삼일정공</a>
 
-<!-- 첫 화면: 배경 사진 하나로 연결 -->
-<div class="hero" id="home">
-
-  <header class="topbar">
-    <a class="logo" href="#home">
-      삼일정공
-      <span>MACHINING · REPAIR · PARTS</span>
-    </a>
-
-    <nav>
-      <a href="#about">회사소개</a>
-      <a href="#service">주요업무</a>
-      <a href="#contact">오시는 길</a>
-    </nav>
+      <nav aria-label="주 메뉴">
+        <a href="about.html">회사소개</a>
+        <a href="services.html">주요업무</a>
+        <a href="https://naver.me/GzdcifqP"
+           target="_blank" rel="noopener noreferrer">오시는 길</a>
+        <a class="phone" href="tel:050713791796">☎ 0507-1379-1796</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero-content">
-    <div class="eyebrow">PRECISION · TRUST · EXPERIENCE</div>
+  <main>
+    <section class="hero" aria-label="삼일정공 메인 이미지">
+      <img src="main-bg.png" alt="삼일정공 기계부품 제작 가공 수리">
 
-    <h1>
-      정밀한 가공,<br>
-      믿을 수 있는 기술
-    </h1>
+      <!-- 이미지 속 주요업무 버튼 부분만 클릭 가능 -->
+      <a class="hero-button"
+         href="services.html"
+         aria-label="주요업무 보기"></a>
+    </section>
+  </main>
 
-    <p>
-      다양한 기계 부품 제작부터 가공 및 수리까지<br>
-      삼일정공이 성실하게 함께하겠습니다.
-    </p>
-
-    <a class="hero-button" href="#service">주요 업무 알아보기 →</a>
-  </div>
-
-</div>
-
-<!-- 회사소개 -->
-<section class="about" id="about">
-  <div class="section-inner">
-    <div class="section-label">ABOUT US</div>
-    <h2 class="section-title">삼일정공을 소개합니다</h2>
-
-    <p class="section-description">
-      삼일정공은 기계 부품 제작·가공·수리를 전문으로 하는 업체입니다.
-      현장 경험과 기술을 바탕으로 고객의 다양한 작업 요구에
-      성실하게 대응하겠습니다.
-    </p>
-  </div>
-</section>
-
-<!-- 주요 업무 -->
-<section class="services-section" id="service">
-  <div class="section-inner">
-    <div class="section-label">OUR SERVICES</div>
-    <h2 class="section-title">주요 업무</h2>
-    <p class="section-description">
-      다양한 기계 부품 제작과 가공, 수리 작업을 진행합니다.
-    </p>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 01</div>
-        <h3>선반 가공</h3>
-        <p>각종 기계 부품 선삭 가공</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 02</div>
-        <h3>밀링 가공</h3>
-        <p>부품 형상 및 정밀 가공</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 03</div>
-        <h3>용접 작업</h3>
-        <p>금속 부품 및 구조물 용접</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 04</div>
-        <h3>농기계 수리</h3>
-        <p>농기계 부품 수리 및 정비</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 05</div>
-        <h3>지게차 부품</h3>
-        <p>지게차 관련 부품 제작 및 수리</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-number">SERVICE 06</div>
-        <h3>기계 부품 제작·수리</h3>
-        <p>현장 맞춤형 부품 가공 및 수리</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 문의 및 주소 -->
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <div class="section-label">CONTACT</div>
-    <h2 class="section-title">문의 및 오시는 길</h2>
-    <p class="section-description">
-      작업 문의 및 방문 전 위치를 확인해 주세요.
-    </p>
-    <p class="address">
-      충청북도 음성군 대소읍 오태로 42-14
-    </p>
-  </div>
-</section>
-
-<footer>
-  © 삼일정공. All rights reserved.
-</footer>
-
+  <footer>
+    <strong>삼일정공</strong><br>
+    충청북도 음성군 대소읍 오태로 42-14<br>
+    전화: <a href="tel:050713791796">0507-1379-1796</a><br>
+    © 삼일정공. All rights reserved.
+  </footer>
 </body>
 </html>

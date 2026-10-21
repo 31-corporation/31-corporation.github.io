@@ -1,1 +1,402 @@
+<!DOCTYPE html><html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="삼일정공 주요업무 - 3D CAD 설계, 기계 부품 가공, 지게차·농기계 부품 제작 및 산업기계 수리">
+  <title>주요업무 | 삼일정공</title>  <style>
+    * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      color: #26362c;
+      background: #f5f8f5;
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; }
+
+    .header {
+      background: #043b2b;
+      color: white;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: white;
+      font-size: 25px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav a.active { color: #80e9a4; }
+
+    .phone {
+      color: #8de3a4;
+      border: 1px solid #65d58b;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      padding: 48px 7%;
+      color: white;
+      background:
+        linear-gradient(90deg,
+          rgba(2, 35, 25, .96),
+          rgba(2, 35, 25, .78) 48%,
+          rgba(2, 35, 25, .22)),
+        url("factory-bg.jpg") center 52% / cover no-repeat,
+        #173c2d;
+    }
+
+    .hero-content { max-width: 700px; }
+
+    .eyebrow {
+      color: #75e99c;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 5vw, 56px);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    h1 span { color: #65e994; }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    .content {
+      max-width: 1180px;
+      margin: auto;
+      padding: 48px 24px 60px;
+    }
+
+    .section-title {
+      font-size: 27px;
+      margin: 0 0 10px;
+      padding-left: 14px;
+      border-left: 5px solid #16834b;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      color: #657268;
+      margin: 0 0 28px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #dce8de;
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 27px;
+      box-shadow: 0 5px 18px rgba(15, 60, 35, .05);
+    }
+
+    .number {
+      color: #16834b;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .service-card h2 {
+      font-size: 23px;
+      line-height: 1.4;
+      margin: 8px 0 12px;
+      color: #075b35;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: #526057;
+      font-size: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: #e8f5eb;
+      color: #08733d;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .process {
+      margin-top: 48px;
+      padding: 30px;
+      border-radius: 16px;
+      background: #e9f2eb;
+    }
+
+    .process h2 {
+      margin: 0 0 18px;
+      color: #075b35;
+      font-size: 23px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 10px;
+      padding: 16px 10px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .step span {
+      display: block;
+      color: #16834b;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 42px 20px;
+      color: white;
+      background: #043b2b;
+    }
+
+    .contact h2 {
+      margin: 0 0 8px;
+      font-size: 27px;
+    }
+
+    .contact p {
+      margin: 0 0 20px;
+      color: #dcebe0;
+    }
+
+    .contact-button {
+      display: inline-block;
+      color: #043b2b;
+      background: #80e9a4;
+      border-radius: 30px;
+      padding: 11px 24px;
+      font-weight: 800;
+    }
+
+    .footer {
+      background: #022b20;
+      color: #d7e4db;
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 13px;
+    }
+
+    .footer a { color: white; }
+
+    @media (max-width: 700px) {
+      .header {
+        justify-content: center;
+        padding: 14px 12px;
+        gap: 12px;
+      }
+
+      .logo { font-size: 23px; }
+
+      .nav {
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav a { font-size: 13px; }
+
+      .phone { font-size: 12px; }
+
+      .hero {
+        min-height: 300px;
+        padding: 38px 22px;
+        background-position: center;
+      }
+
+      .hero p { font-size: 16px; }
+
+      .content { padding: 35px 16px 42px; }
+
+      .section-title { font-size: 23px; }
+
+      .section-desc { font-size: 14px; }
+
+      .service-grid { gap: 11px; }
+
+      .service-card {
+        padding: 19px 14px;
+        border-radius: 12px;
+      }
+
+      .service-card h2 { font-size: 18px; }
+
+      .service-card p { font-size: 14px; }
+
+      .tag {
+        font-size: 11px;
+        padding: 4px 8px;
+      }
+
+      .process { padding: 20px 12px; }
+
+      .process h2 { font-size: 20px; }
+
+      .step { font-size: 13px; padding: 13px 5px; }
+
+      .contact h2 { font-size: 23px; }
+    }
+
+    @media (max-width: 360px) {
+      .nav { gap: 12px; }
+      .service-card { padding: 15px 10px; }
+      .service-card h2 { font-size: 16px; }
+    }
+  </style></head><body>
+  <header class="header">
+    <a class="logo" href="index.html">⚙ 삼일정공</a><nav class="nav" aria-label="주 메뉴">
+  <a href="about.html">회사소개</a>
+  <a class="active" href="services.html">주요업무</a>
+  <a href="services.html">설비현황</a>
+  <a href="https://naver.me/GzdcifqP"
+     target="_blank" rel="noopener noreferrer">오시는 길</a>
+</nav>
+
+<a class="phone" href="tel:0438771796">☎ 전화문의 043-877-1796</a>
+
+  </header>  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">SAMIL PRECISION INDUSTRY</div>
+        <h1>설계부터 가공까지<br><span>삼일정공의 주요업무</span></h1>
+        <p>1999년부터 쌓아온 기술과 경험으로 기계 부품의 제작과 수리를 수행합니다.</p>
+      </div>
+    </section><section class="content">
+  <h2 class="section-title">주요 업무 분야</h2>
+  <p class="section-desc">
+    자체 설계와 가공 기술을 바탕으로 다양한 기계 부품 작업을 진행합니다.
+  </p>
+
+  <div class="service-grid">
+    <article class="service-card">
+      <div class="number">SERVICE 01</div>
+      <h2>3D CAD 설계</h2>
+      <p>
+        기계 부품의 구조와 형상을 검토하고, 작업 목적과 현장 조건에
+        맞춰 3D CAD를 활용한 설계를 진행합니다.
+      </p>
+      <span class="tag">자체 설계</span>
+    </article>
+
+    <article class="service-card">
+      <div class="number">SERVICE 02</div>
+      <h2>기계 부품 설계 및 가공</h2>
+      <p>
+        설계한 형상을 실제 부품으로 구현할 수 있도록 기계 부품의
+        가공과 제작 작업을 수행합니다.
+      </p>
+      <span class="tag">설계 · 가공</span>
+    </article>
+
+    <article class="service-card">
+      <div class="number">SERVICE 03</div>
+      <h2>지게차·농기계 부품</h2>
+      <p>
+        지게차와 농기계에 사용되는 부품의 제작 및 관련 가공 작업을
+        진행하며 필요한 부품을 현장 상황에 맞춰 대응합니다.
+      </p>
+      <span class="tag">부품 제작</span>
+    </article>
+
+    <article class="service-card">
+      <div class="number">SERVICE 04</div>
+      <h2>산업기계 부품 제작 및 수리</h2>
+      <p>
+        다양한 산업기계에 사용되는 부품의 제작과 수리 작업을 통해
+        현장에서 필요한 기술적 요구에 대응합니다.
+      </p>
+      <span class="tag">제작 · 수리</span>
+    </article>
+  </div>
+
+  <section class="process">
+    <h2>설계부터 제작까지</h2>
+    <div class="steps">
+      <div class="step">
+        <span>STEP 01</span>
+        설계 및 검토
+      </div>
+      <div class="step">
+        <span>STEP 02</span>
+        부품 가공
+      </div>
+      <div class="step">
+        <span>STEP 03</span>
+        제작 및 수리
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="contact">
+  <h2>기계 부품 제작 및 가공 문의</h2>
+  <p>삼일정공으로 연락해 주세요.</p>
+  <a class="contact-button" href="tel:0438771796">
+    ☎ 043-877-1796 전화 문의
+  </a>
+</section>
+
+  </main>  <footer class="footer">
+    <strong>삼일정공</strong><br>
+    충청북도 음성군 대소읍 오태로 42-14<br>
+    사무실 <a href="tel:0438771796">043-877-1796</a>
+    &nbsp; | &nbsp;
+    휴대폰 <a href="tel:01054921796">010-5492-1796</a><br>
+    © 삼일정공. All rights reserved.
+  </footer>
+</body>
+</html>

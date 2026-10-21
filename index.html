@@ -159,10 +159,17 @@
 <body>
   <main>
     <section class="hero" aria-label="삼일정공 메인 화면">
-      <img
-        src="main-bg.png"
-        alt="삼일정공 기계부품 제작·가공·수리"
-      >
+  <picture>
+  <source
+    media="(max-width: 700px)"
+    srcset="main-mobile.png"
+  >
+  <img
+    src="main-bg.png"
+    alt="삼일정공 기계부품 제작·가공·수리"
+  >
+  </picture>
+
 
       <!-- 이미지 속 메뉴 클릭 영역 -->
       <a class="hotspot about-link"

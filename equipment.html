@@ -1,1 +1,294 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>설비현황 | 삼일정공</title>
+  <meta name="description" content="삼일정공의 기계 부품 제작, 가공 및 수리 설비현황">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      color: #26332c;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #174d35;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #e0ebe4;
+    }
+
+    nav {
+      background: #123b2a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 13px 17px;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #2d654a;
+    }
+
+    .page-title {
+      background: #f2f5f2;
+      text-align: center;
+      padding: 42px 15px;
+      border-bottom: 1px solid #e1e7e2;
+    }
+
+    .page-title h2 {
+      margin: 0 0 8px;
+      color: #174d35;
+      font-size: 30px;
+    }
+
+    .page-title p {
+      margin: 0;
+      color: #66736a;
+      font-size: 15px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 22px 55px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .intro h3 {
+      font-size: 25px;
+      color: #174d35;
+      margin: 0 0 10px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #66736a;
+      font-size: 15px;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .equipment-card {
+      border: 1px solid #dfe6e0;
+      border-radius: 10px;
+      padding: 25px;
+      background: #fff;
+      box-shadow: 0 3px 12px rgba(20, 60, 40, 0.05);
+    }
+
+    .equipment-number {
+      color: #668573;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .equipment-card h4 {
+      margin: 8px 0;
+      font-size: 20px;
+      color: #174d35;
+    }
+
+    .equipment-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #59665e;
+    }
+
+    .notice {
+      margin-top: 30px;
+      padding: 22px;
+      background: #f2f5f2;
+      border-left: 4px solid #174d35;
+      border-radius: 4px;
+    }
+
+    .notice h3 {
+      margin: 0 0 5px;
+      color: #174d35;
+      font-size: 18px;
+    }
+
+    .notice p {
+      margin: 0;
+      font-size: 14px;
+      color: #59665e;
+    }
+
+    footer {
+      background: #123b2a;
+      color: #e5eee8;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 20px 10px;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      nav a {
+        padding: 11px 10px;
+        font-size: 13px;
+      }
+
+      .page-title {
+        padding: 32px 12px;
+      }
+
+      .page-title h2 {
+        font-size: 26px;
+      }
+
+      main {
+        padding: 30px 16px 40px;
+      }
+
+      .intro h3 {
+        font-size: 22px;
+      }
+
+      .equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .equipment-card {
+        padding: 21px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>삼일정공</h1>
+    <p>기계 부품 제작 · 가공 · 수리 전문</p>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="about.html">회사소개</a>
+    <a href="services.html">주요업무</a>
+    <a href="equipment.html" class="active">설비현황</a>
+    <a href="https://map.naver.com/" target="_blank" rel="noopener">오시는 길</a>
+  </nav>
+
+  <section class="page-title">
+    <h2>설비현황</h2>
+    <p>정밀한 가공을 위한 설비와 기술</p>
+  </section>
+
+  <main>
+    <section class="intro">
+      <h3>보유 설비</h3>
+      <p>
+        기계 부품의 제작과 가공, 수리 작업에 필요한 설비를 활용하여<br>
+        작업 목적과 부품 특성에 맞는 서비스를 제공합니다.
+      </p>
+    </section>
+
+    <section class="equipment-grid">
+
+      <article class="equipment-card">
+        <span class="equipment-number">EQUIPMENT 01</span>
+        <h4>선반 가공 설비</h4>
+        <p>축 및 원형 부품의 가공과 치수 조정 등 다양한 선삭 작업</p>
+      </article>
+
+      <article class="equipment-card">
+        <span class="equipment-number">EQUIPMENT 02</span>
+        <h4>밀링 가공 설비</h4>
+        <p>부품의 평면 가공과 형상 가공 등 작업 목적에 맞는 가공</p>
+      </article>
+
+      <article class="equipment-card">
+        <span class="equipment-number">EQUIPMENT 03</span>
+        <h4>부품 제작 설비</h4>
+        <p>기계 부품의 특성과 용도에 맞춘 제작 및 가공 작업</p>
+      </article>
+
+      <article class="equipment-card">
+        <span class="equipment-number">EQUIPMENT 04</span>
+        <h4>정비 및 수리 설비</h4>
+        <p>각종 기계 부품의 점검과 정비, 수리 작업 지원</p>
+      </article>
+
+    </section>
+
+    <section class="notice">
+      <h3>정확한 작업과 꼼꼼한 품질 관리</h3>
+      <p>
+        작업 목적과 부품의 특성을 고려하여 제작부터 가공 및 수리까지
+        세심하게 작업합니다.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>삼일정공</strong></p>
+    <p>충청북도 음성군 대소읍</p>
+    <p>
+      전화문의 :
+      <a href="tel:0438771796">043-877-1796</a>
+    </p>
+    <p>
+      휴대전화 :
+      <a href="tel:01054921796">010-5492-1796</a>
+    </p>
+  </footer>
+
+</body>
+</html>

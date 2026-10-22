@@ -20,76 +20,49 @@
 
     a { text-decoration: none; }
 
-  .header {
-    background: #043b2b;
-    color: white;
-    padding: 14px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .logo {
-    color: white;
-    font-size: 25px;
-    font-weight: 800;
-    white-space: nowrap;
-  }
-  
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  
-  .nav a {
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-  }
-  
-  .nav a.active {
-    color: #80e9a4;
-  }
-  
-  .phone {
-    color: #8de3a4;
-    border: 1px solid #65d58b;
-    border-radius: 30px;
-    padding: 7px 13px;
-    font-size: 13px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  
-  @media (max-width: 700px) {
     .header {
-      justify-content: center;
-      padding: 14px 12px;
-      gap: 12px;
+      background: #043b2b;
+      color: white;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-  
+
     .logo {
-      font-size: 23px;
+      color: white;
+      font-size: 25px;
+      font-weight: 800;
+      white-space: nowrap;
     }
-  
+
     .nav {
-      width: 100%;
-      justify-content: center;
-      gap: 18px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
-  
+
     .nav a {
-      font-size: 13px;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
     }
-  
+
+    .nav a.active { color: #80e9a4; }
+
     .phone {
-      font-size: 12px;
+      color: #8de3a4;
+      border: 1px solid #65d58b;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
     }
-  }    
+
 
     .hero {
       position: relative;
@@ -347,24 +320,27 @@
 
     footer a { color: white; }
 
-    @media (max-width: 760px) {
+    @media (max-width: 700px) {
       .header {
         justify-content: center;
-        padding: 17px 12px;
-        gap: 13px;
+        padding: 14px 12px;
+        gap: 12px;
       }
 
-      .logo { font-size: 24px; }
+      .logo { font-size: 23px; }
 
       .nav {
         width: 100%;
-        gap: 12px 17px;
+        justify-content: center;
+        gap: 18px;
       }
 
       .nav a { font-size: 13px; }
 
-      .nav .phone { padding: 5px 9px; }
+      .phone { font-size: 12px; }
+    }
 
+    @media (max-width: 760px) {
       .hero {
         min-height: 300px;
         padding: 42px 23px;
@@ -409,14 +385,14 @@
 <body>
 
   <header class="header">
-    <a class="logo" href="index.html">삼일정공</a>
-    <nav class="nav" aria-label="주요 메뉴">
+    <a class="logo" href="index.html">⚙ 삼일정공</a>
+    <nav class="nav" aria-label="주 메뉴">
       <a href="about.html">회사소개</a>
       <a href="services.html">주요업무</a>
-      <a href="equipment.html" class="active">설비현황</a>
+      <a class="active" href="equipment.html">설비현황</a>
       <a href="https://naver.me/GzdcifqP" target="_blank" rel="noopener noreferrer">오시는 길</a>
-      <a class="phone" href="tel:0438771796">전화문의</a>
     </nav>
+    <a class="phone" href="tel:0438771796">☎ 전화문의 043-877-1796</a>
   </header>
 
   <section class="hero">

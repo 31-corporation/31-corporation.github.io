@@ -1,102 +1,162 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>설비현황 | 삼일정공</title>
-  <meta name="description" content="삼일정공의 기계 부품 제작, 가공 및 수리 설비현황">
+  <meta name="description" content="삼일정공의 기계 부품 제작, 가공 및 수리">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Arial, "Noto Sans KR", sans-serif;
-      color: #26332c;
-      background: #fff;
+      font-family: Arial, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      color: #26372e;
+      background: #f4f7f4;
       line-height: 1.7;
     }
 
-    header {
-      background: #174d35;
+    a { text-decoration: none; }
+
+    .header {
+      background: #043b2b;
       color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 14px;
-      color: #e0ebe4;
-    }
-
-    nav {
-      background: #123b2a;
+      padding: 14px 5%;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
-      padding: 0 8px;
     }
 
-    nav a {
+    .logo {
       color: white;
-      text-decoration: none;
-      padding: 13px 17px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #edf5ef;
       font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: color .2s;
     }
 
-    nav a:hover,
-    nav a.active {
-      background: #2d654a;
+    .nav a:hover,
+    .nav a.active {
+      color: #80e9a4;
     }
 
-    .page-title {
-      background: #f2f5f2;
-      text-align: center;
-      padding: 42px 15px;
-      border-bottom: 1px solid #e1e7e2;
+    .nav .phone {
+      border: 1px solid #80e9a4;
+      color: #80e9a4;
+      padding: 7px 12px;
+      border-radius: 6px;
     }
 
-    .page-title h2 {
-      margin: 0 0 8px;
-      color: #174d35;
-      font-size: 30px;
+    .hero {
+      position: relative;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      padding: 55px max(7%, calc((100% - 1180px) / 2));
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(2, 37, 26, .94), rgba(3, 48, 33, .76)),
+        url("factory-bg.jpg") center 52% / cover no-repeat;
+      overflow: hidden;
     }
 
-    .page-title p {
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: 7%;
+      top: 25px;
+      border: 1px solid rgba(128, 233, 164, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(128, 233, 164, .04),
+                  0 0 0 56px rgba(128, 233, 164, .03);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      color: #80e9a4;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(32px, 4.5vw, 50px);
+      line-height: 1.25;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span { color: #80e9a4; }
+
+    .hero p {
       margin: 0;
-      color: #66736a;
-      font-size: 15px;
+      color: #dce9e0;
+      font-size: 16px;
+      max-width: 570px;
+    }
+
+    .hero-line {
+      margin-top: 26px;
+      width: 65px;
+      height: 4px;
+      background: #80e9a4;
+      border-radius: 5px;
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1180px;
       margin: auto;
-      padding: 40px 22px 55px;
+      padding: 52px 24px 65px;
     }
 
-    .intro {
-      text-align: center;
-      margin-bottom: 32px;
+    .section-heading {
+      margin-bottom: 28px;
     }
 
-    .intro h3 {
-      font-size: 25px;
-      color: #174d35;
-      margin: 0 0 10px;
+    .section-heading .eyebrow {
+      margin-bottom: 5px;
+      letter-spacing: 2px;
     }
 
-    .intro p {
+    .section-heading h2 {
+      margin: 0 0 8px;
+      color: #123f2d;
+      font-size: 29px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
       margin: 0;
-      color: #66736a;
+      color: #68766d;
       font-size: 15px;
     }
 
@@ -107,98 +167,200 @@
     }
 
     .equipment-card {
-      border: 1px solid #dfe6e0;
-      border-radius: 10px;
-      padding: 25px;
-      background: #fff;
-      box-shadow: 0 3px 12px rgba(20, 60, 40, 0.05);
+      position: relative;
+      min-height: 205px;
+      padding: 28px;
+      background: white;
+      border: 1px solid #e0e8e1;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(15, 55, 34, .045);
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
     }
 
-    .equipment-number {
-      color: #668573;
+    .equipment-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(15, 55, 34, .09);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .number {
+      color: #528064;
       font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-weight: 800;
+      letter-spacing: 2px;
     }
 
-    .equipment-card h4 {
-      margin: 8px 0;
-      font-size: 20px;
-      color: #174d35;
+    .gear-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      border-radius: 12px;
+      background: #eaf5ed;
+      color: #17613c;
+    }
+
+    .gear-icon svg {
+      width: 27px;
+      height: 27px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .equipment-card h3 {
+      margin: 0 0 8px;
+      color: #123f2d;
+      font-size: 21px;
+      letter-spacing: -.5px;
     }
 
     .equipment-card p {
       margin: 0;
+      color: #657269;
       font-size: 14px;
-      color: #59665e;
     }
 
     .notice {
-      margin-top: 30px;
-      padding: 22px;
-      background: #f2f5f2;
-      border-left: 4px solid #174d35;
-      border-radius: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-top: 28px;
+      padding: 25px 28px;
+      background: #e9f2eb;
+      border: 1px solid #d8e8dc;
+      border-radius: 12px;
+    }
+
+    .notice-mark {
+      color: #17613c;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.3;
     }
 
     .notice h3 {
       margin: 0 0 5px;
-      color: #174d35;
+      color: #123f2d;
       font-size: 18px;
     }
 
     .notice p {
       margin: 0;
+      color: #586a5d;
       font-size: 14px;
-      color: #59665e;
+    }
+
+    .contact-banner {
+      margin-top: 42px;
+      padding: 32px;
+      text-align: center;
+      color: white;
+      background: #073d2b;
+      border-radius: 14px;
+    }
+
+    .contact-banner h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    .contact-banner p {
+      margin: 0 0 20px;
+      color: #d7e7dc;
+      font-size: 14px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 7px;
+      background: #80e9a4;
+      color: #073d2b;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .contact-buttons a.secondary {
+      color: white;
+      background: transparent;
+      border: 1px solid #91bba0;
     }
 
     footer {
-      background: #123b2a;
-      color: #e5eee8;
+      padding: 26px 16px;
       text-align: center;
-      padding: 25px 15px;
+      color: #dce8df;
+      background: #062e22;
       font-size: 13px;
     }
 
-    footer p {
-      margin: 4px 0;
-    }
+    footer p { margin: 4px 0; }
 
-    footer a {
+    footer strong {
       color: white;
-      text-decoration: none;
+      font-size: 16px;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 20px 10px;
+    footer a { color: white; }
+
+    @media (max-width: 760px) {
+      .header {
+        justify-content: center;
+        padding: 17px 12px;
+        gap: 13px;
       }
 
-      header h1 {
-        font-size: 25px;
+      .logo { font-size: 24px; }
+
+      .nav {
+        width: 100%;
+        gap: 12px 17px;
       }
 
-      nav a {
-        padding: 11px 10px;
-        font-size: 13px;
+      .nav a { font-size: 13px; }
+
+      .nav .phone { padding: 5px 9px; }
+
+      .hero {
+        min-height: 300px;
+        padding: 42px 23px;
+        background-position: 58% center;
       }
 
-      .page-title {
-        padding: 32px 12px;
+      .hero::after {
+        width: 170px;
+        height: 170px;
+        right: -60px;
+        top: 20px;
       }
 
-      .page-title h2 {
-        font-size: 26px;
-      }
+      .hero h1 { font-size: 34px; }
 
-      main {
-        padding: 30px 16px 40px;
-      }
+      .hero p { font-size: 14px; }
 
-      .intro h3 {
-        font-size: 22px;
-      }
+      main { padding: 37px 16px 45px; }
+
+      .section-heading h2 { font-size: 25px; }
 
       .equipment-grid {
         grid-template-columns: 1fr;
@@ -206,88 +368,131 @@
       }
 
       .equipment-card {
-        padding: 21px;
+        min-height: 0;
+        padding: 23px;
       }
+
+      .equipment-card h3 { font-size: 19px; }
+
+      .notice { padding: 20px; }
+
+      .contact-banner { padding: 26px 17px; }
+
+      .contact-banner h2 { font-size: 21px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>삼일정공</h1>
-    <p>기계 부품 제작 · 가공 · 수리 전문</p>
+  <header class="header">
+    <a class="logo" href="index.html">삼일정공</a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="about.html">회사소개</a>
+      <a href="services.html">주요업무</a>
+      <a href="equipment.html" class="active">설비현황</a>
+      <a href="https://naver.me/GzdcifqP" target="_blank" rel="noopener noreferrer">오시는 길</a>
+      <a class="phone" href="tel:0438771796">전화문의</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">홈</a>
-    <a href="about.html">회사소개</a>
-    <a href="services.html">주요업무</a>
-    <a href="equipment.html" class="active">설비현황</a>
-    <a href="https://map.naver.com/" target="_blank" rel="noopener">오시는 길</a>
-  </nav>
-
-  <section class="page-title">
-    <h2>설비현황</h2>
-    <p>정밀한 가공을 위한 설비와 기술</p>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">SAMIL PRECISION</div>
+      <h1>기계를 이해하고<br><span>부품의 가치를 만듭니다.</span></h1>
+      <p>기계 부품 제작부터 정밀 가공과 수리까지, 작업 목적과 부품의 특성을 고려해 꼼꼼하게 대응합니다.</p>
+      <div class="hero-line"></div>
+    </div>
   </section>
 
   <main>
-    <section class="intro">
-      <h3>보유 설비</h3>
-      <p>
-        기계 부품의 제작과 가공, 수리 작업에 필요한 설비를 활용하여<br>
-        작업 목적과 부품 특성에 맞는 서비스를 제공합니다.
-      </p>
+    <section class="section-heading">
+      <div class="eyebrow">OUR CAPABILITIES</div>
+      <h2>제작 · 가공 · 수리</h2>
+      <p>다양한 기계 부품 작업에 필요한 기술과 대응 역량을 소개합니다.</p>
     </section>
 
     <section class="equipment-grid">
 
       <article class="equipment-card">
-        <span class="equipment-number">EQUIPMENT 01</span>
-        <h4>선반 가공 설비</h4>
-        <p>축 및 원형 부품의 가공과 치수 조정 등 다양한 선삭 작업</p>
+        <div class="card-top">
+          <span class="number">CAPABILITY 01</span>
+          <span class="gear-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="12" cy="12" r="8"></circle>
+              <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+            </svg>
+          </span>
+        </div>
+        <h3>기계 부품 제작</h3>
+        <p>부품의 용도와 형상을 고려해 필요한 기계 부품을 제작하고 작업 조건에 맞춰 대응합니다.</p>
       </article>
 
       <article class="equipment-card">
-        <span class="equipment-number">EQUIPMENT 02</span>
-        <h4>밀링 가공 설비</h4>
-        <p>부품의 평면 가공과 형상 가공 등 작업 목적에 맞는 가공</p>
+        <div class="card-top">
+          <span class="number">CAPABILITY 02</span>
+          <span class="gear-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19h16M6 19V9h12v10M9 9V5h6v4M8 13h8M8 16h8"></path>
+              <circle cx="12" cy="3" r="1"></circle>
+            </svg>
+          </span>
+        </div>
+        <h3>기계 부품 가공</h3>
+        <p>부품의 치수와 형상, 사용 목적을 고려해 필요한 가공 작업을 진행합니다.</p>
       </article>
 
       <article class="equipment-card">
-        <span class="equipment-number">EQUIPMENT 03</span>
-        <h4>부품 제작 설비</h4>
-        <p>기계 부품의 특성과 용도에 맞춘 제작 및 가공 작업</p>
+        <div class="card-top">
+          <span class="number">CAPABILITY 03</span>
+          <span class="gear-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 6a5 5 0 0 0-6.5 6.5L3 17l4 4 4.5-4.5A5 5 0 0 0 18 10l-3 3-4-4 3-3Z"></path>
+            </svg>
+          </span>
+        </div>
+        <h3>기계 부품 수리</h3>
+        <p>부품의 상태와 이상 부위를 살펴보고 작업 여건에 맞춰 수리 및 정비를 진행합니다.</p>
       </article>
 
       <article class="equipment-card">
-        <span class="equipment-number">EQUIPMENT 04</span>
-        <h4>정비 및 수리 설비</h4>
-        <p>각종 기계 부품의 점검과 정비, 수리 작업 지원</p>
+        <div class="card-top">
+          <span class="number">CAPABILITY 04</span>
+          <span class="gear-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20V8l8-5 8 5v12M8 20v-6h8v6M8 9h.01M12 9h.01M16 9h.01"></path>
+            </svg>
+          </span>
+        </div>
+        <h3>산업·농기계 부품 대응</h3>
+        <p>산업 현장과 농기계에 사용되는 부품의 제작 및 수리 문의에 대응합니다.</p>
       </article>
 
     </section>
 
     <section class="notice">
-      <h3>정확한 작업과 꼼꼼한 품질 관리</h3>
-      <p>
-        작업 목적과 부품의 특성을 고려하여 제작부터 가공 및 수리까지
-        세심하게 작업합니다.
-      </p>
+      <div class="notice-mark">✓</div>
+      <div>
+        <h3>작업 하나에도 꼼꼼하게</h3>
+        <p>부품의 특성과 사용 환경을 고려해 제작·가공·수리 작업을 진행합니다. 필요한 작업에 대해 편하게 문의해 주세요.</p>
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <h2>필요한 부품, 함께 해결하겠습니다.</h2>
+      <p>기계 부품 제작 · 가공 · 수리 문의</p>
+      <div class="contact-buttons">
+        <a href="tel:0438771796">전화 043-877-1796</a>
+        <a class="secondary" href="https://naver.me/GzdcifqP" target="_blank" rel="noopener noreferrer">오시는 길</a>
+      </div>
     </section>
   </main>
 
   <footer>
     <p><strong>삼일정공</strong></p>
-    <p>충청북도 음성군 대소읍</p>
-    <p>
-      전화문의 :
-      <a href="tel:0438771796">043-877-1796</a>
-    </p>
-    <p>
-      휴대전화 :
-      <a href="tel:01054921796">010-5492-1796</a>
-    </p>
+    <p>충청북도 음성군 대소읍 오태로 42-14</p>
+    <p>전화 <a href="tel:0438771796">043-877-1796</a> · 휴대전화 <a href="tel:01054921796">010-5492-1796</a></p>
+    <p>© 삼일정공. All rights reserved.</p>
   </footer>
 
 </body>

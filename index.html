@@ -56,6 +56,21 @@
       outline: 3px solid #70c58a;
       outline-offset: 2px;
     }
+    /* 메인화면 로고 */
+    .brand-logo {
+      position: absolute;
+      top: 2%;
+      left: 3%;
+      z-index: 10;
+      display: block;
+      width: 180px;
+    }
+    
+    .brand-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
     /* 이미지 속 상단 메뉴 */
     .about-link {
@@ -228,6 +243,9 @@
   <main>
     <section class="hero" aria-label="삼일정공 메인 화면">
   <picture>
+  <a class="brand-logo" href="index.html" aria-label="삼일정공 홈">
+  <img src="samil-logo.png" alt="삼일정공">
+  </a>
   <source
     media="(max-width: 700px)"
     srcset="main-mobile.png"

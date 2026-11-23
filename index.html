@@ -1,158 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>설비현황 | 삼일정공</title>
-<meta name="description" content="삼일정공의 실제 가공 설비 현황. 기계 부품 제작, 가공 및 수리">
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:#26372e;background:#f4f7f4;line-height:1.7}
-a{text-decoration:none}
-.header{background:#043b2b;color:#fff;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.logo{color:#fff;font-size:25px;font-weight:800;white-space:nowrap}
-.nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.nav a{color:#fff;font-size:14px;font-weight:700}
-.nav a.active{color:#80e9a4}
-.phone{color:#8de3a4;border:1px solid #65d58b;border-radius:30px;padding:7px 13px;font-size:13px;font-weight:700;white-space:nowrap}
-.hero{position:relative;min-height:330px;display:flex;align-items:center;padding:55px max(7%,calc((100% - 1180px)/2));color:#fff;background:linear-gradient(90deg,rgba(2,37,26,.94),rgba(3,48,33,.76)),url("factory-bg.jpg") center 52%/cover no-repeat;overflow:hidden}
-.hero-content{position:relative;z-index:1;max-width:720px}
-.eyebrow{color:#80e9a4;font-size:13px;font-weight:800;letter-spacing:3px;margin-bottom:12px}
-.hero h1{margin:0 0 16px;font-size:clamp(32px,4.5vw,50px);line-height:1.25;letter-spacing:-1.5px}
-.hero h1 span{color:#80e9a4}
-.hero p{margin:0;color:#dce9e0;font-size:16px;max-width:570px}
-.hero-line{margin-top:26px;width:65px;height:4px;background:#80e9a4;border-radius:5px}
-main{max-width:1180px;margin:auto;padding:52px 24px 65px}
-.section-heading{margin-bottom:28px}
-.section-heading .eyebrow{margin-bottom:5px;letter-spacing:2px}
-.section-heading h2{margin:0 0 8px;color:#123f2d;font-size:29px;letter-spacing:-1px}
-.section-heading p{margin:0;color:#68766d;font-size:15px}
-.equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.equipment-card{background:#fff;border:1px solid #e0e8e1;border-radius:14px;overflow:hidden;box-shadow:0 5px 18px rgba(15,55,34,.055);transition:transform .2s,box-shadow .2s}
-.equipment-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(15,55,34,.11)}
-.equipment-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e8eee9}
-.equipment-info{padding:20px 23px 23px}
-.equipment-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px}
-.number{color:#528064;font-size:12px;font-weight:800;letter-spacing:2px}
-.tag{padding:3px 9px;border-radius:20px;background:#eaf5ed;color:#17613c;font-size:11px;font-weight:700}
-.equipment-card h3{margin:0 0 5px;color:#123f2d;font-size:20px;letter-spacing:-.4px}
-.equipment-card p{margin:0;color:#657269;font-size:14px}
-.notice{display:flex;align-items:flex-start;gap:18px;margin-top:28px;padding:25px 28px;background:#e9f2eb;border:1px solid #d8e8dc;border-radius:12px}
-.notice-mark{color:#17613c;font-size:25px;font-weight:800;line-height:1.3}
-.notice h3{margin:0 0 5px;color:#123f2d;font-size:18px}
-.notice p{margin:0;color:#586a5d;font-size:14px}
-.contact-banner{margin-top:42px;padding:32px;text-align:center;color:#fff;background:#073d2b;border-radius:14px}
-.contact-banner h2{margin:0 0 8px;font-size:24px}
-.contact-banner p{margin:0 0 20px;color:#d7e7dc;font-size:14px}
-.contact-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.contact-buttons a{display:inline-block;padding:10px 18px;border-radius:7px;background:#80e9a4;color:#073d2b;font-weight:800;font-size:14px}
-.contact-buttons a.secondary{color:#fff;background:transparent;border:1px solid #91bba0}
-footer{padding:26px 16px;text-align:center;color:#dce8df;background:#062e22;font-size:13px}
-footer p{margin:4px 0}
-footer strong{color:#fff;font-size:16px}
-footer a{color:#fff}
-@media(max-width:700px){.header{justify-content:center;padding:14px 12px;gap:12px}.logo{font-size:23px}.nav{width:100%;justify-content:center;gap:18px}.nav a{font-size:13px}.phone{display:none}}
-@media(max-width:760px){.hero{min-height:290px;padding:42px 23px;background-position:58% center}.hero h1{font-size:34px}.hero p{font-size:14px}main{padding:37px 16px 45px}.section-heading h2{font-size:25px}.equipment-grid{grid-template-columns:1fr;gap:15px}.equipment-info{padding:17px 19px 20px}.equipment-card h3{font-size:19px}.notice{padding:20px}.contact-banner{padding:26px 17px}.contact-banner h2{font-size:21px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="삼일정공 - 기계부품 제작, 가공 및 수리">
+  <title>삼일정공 | 기계부품 제작·가공·수리</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: #073b2c;
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      line-height: 0;
+    }
+
+    .hero picture {
+      display: block;
+      width: 100%;
+    }
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      line-height: normal;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .hotspot:focus-visible {
+      outline: 3px solid #70c58a;
+      outline-offset: 2px;
+    }
+    /* 메인화면 로고 */
+    .brand-logo {
+      position: absolute;
+      top: 2%;
+      left: 3%;
+      z-index: 10;
+      display: block;
+      width: 180px;
+    }
+    
+    .brand-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 이미지 속 상단 메뉴 */
+    .about-link {
+      left: 33.5%;
+      top: 2.5%;
+      width: 7%;
+      height: 5.5%;
+    }
+
+    .services-link {
+      left: 43.5%;
+      top: 2.5%;
+      width: 7.5%;
+      height: 5.5%;
+    }
+
+    .equipment-link {
+      left: 53.5%;
+      top: 2.5%;
+      width: 7.5%;
+      height: 5.5%;
+    }
+
+    .map-link {
+      left: 63.5%;
+      top: 2.5%;
+      width: 7.5%;
+      height: 5.5%;
+    }
+
+    /* 이미지 속 전화문의 버튼 */
+    .office-phone-link {
+      left: 81%;
+      top: 2%;
+      width: 15%;
+      height: 7%;
+    }
+
+    /* 이미지 속 주요업무 보기 버튼 */
+    .main-services-link {
+      left: 5.5%;
+      top: 66.5%;
+      width: 14.8%;
+      height: 7.5%;
+    }
+
+    .contact-footer {
+      width: 100%;
+      padding: 22px 16px;
+      background: #073b2c;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .contact-footer strong {
+      color: #8de3a4;
+      font-size: 17px;
+    }
+
+    .contact-footer a {
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .contact-footer a:hover {
+      color: #8de3a4;
+    }
+
+    .contact-line {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 700px) {
+      /*
+        모바일 전용 배치와 버튼 위치는
+        PC 확인 후 다음 단계에서 조정합니다.
+      */
+      .contact-footer {
+        font-size: 13px;
+      }
+
+      .contact-line {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+    /* 모바일 이미지 전용 클릭 영역 */
+.mobile-hotspot {
+  display: none;
+}
+ /* 모바일 상단 메뉴 클릭 영역 */
+.mobile-about {
+  top: 9%;
+  left: 5%;
+  width: 20%;
+  height: 5%;
+}
+
+.mobile-nav-services {
+  top: 9%;
+  left: 28%;
+  width: 19%;
+  height: 5%;
+}
+
+.mobile-equipment {
+  top: 9%;
+  left: 52%;
+  width: 20%;
+  height: 5%;
+}
+
+@media (max-width: 700px) {
+  .mobile-hotspot {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 모바일 로고 위치 */
+  .brand-logo {
+    top: 0.5%;
+    left: 1%;
+    width: 135px;
+  }
+
+  /* 모바일 이미지 상단 전화문의 버튼 */
+  .mobile-phone {
+    top: 1.5%;
+    left: 55%;
+    width: 43%;
+    height: 5%;
+  }
+  /* 모바일 이미지 오시는 길 버튼 */
+  .mobile-map {
+    top: 9%;
+    left: 75%;
+    width: 22%;
+    height: 5%;
+  }
+
+  /* 모바일 이미지의 주요업무 보기 버튼 */
+  .mobile-services {
+    top: 77%;
+    left: 25%;
+    width: 50%;
+    height: 6%;
+  }
+
+  /* PC용 클릭 영역은 모바일에서 숨김 */
+  .hotspot {
+    display: none;
+  }
+}
+  </style>
+
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("pageshow", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </head>
+
 <body>
-<header class="header">
-<a class="logo" href="index.html">⚙ 삼일정공</a>
-<nav class="nav" aria-label="주 메뉴">
-<a href="about.html">회사소개</a><a href="services.html">주요업무</a><a class="active" href="equipment.html">설비현황</a><a href="location.html">오시는 길</a>
-</nav>
-<a class="phone" href="tel:0438771796">☎ 전화문의 043-877-1796</a>
-</header>
-<section class="hero">
-<div class="hero-content">
-<div class="eyebrow">SAMIL PRECISION</div>
-<h1>기계를 이해하고<br><span>부품의 가치를 만듭니다.</span></h1>
-<p>삼일정공 작업 현장의 실제 설비를 소개합니다. 기계 부품 제작부터 정밀 가공과 수리까지, 다양한 작업을 직접 수행합니다.</p>
-<div class="hero-line"></div>
-</div>
-</section>
-<main>
-<section class="section-heading">
-<div class="eyebrow">OUR EQUIPMENT</div>
-<h2>삼일정공 보유 설비</h2>
-<p>현장에서 직접 사용하는 주요 가공 설비 8대를 사진으로 확인해 보세요.</p>
-</section>
-<section class="equipment-grid">
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-01.jpg" alt="삼일정공 설비 01" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 01</span><span class="tag">현장 설비</span></div>
-<h3>설비 01</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-02.jpg" alt="삼일정공 설비 02" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 02</span><span class="tag">현장 설비</span></div>
-<h3>설비 02</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-03.jpg" alt="삼일정공 설비 03" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 03</span><span class="tag">현장 설비</span></div>
-<h3>설비 03</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-04.jpg" alt="삼일정공 설비 04" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 04</span><span class="tag">현장 설비</span></div>
-<h3>설비 04</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-05.jpg" alt="삼일정공 설비 05" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 05</span><span class="tag">현장 설비</span></div>
-<h3>설비 05</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-06.jpg" alt="삼일정공 설비 06" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 06</span><span class="tag">현장 설비</span></div>
-<h3>설비 06</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-07.jpg" alt="삼일정공 설비 07" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 07</span><span class="tag">현장 설비</span></div>
-<h3>설비 07</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-<article class="equipment-card">
-<img class="equipment-photo" src="equipment-08.jpg" alt="삼일정공 설비 08" loading="lazy">
-<div class="equipment-info">
-<div class="equipment-meta"><span class="number">EQUIPMENT 08</span><span class="tag">현장 설비</span></div>
-<h3>설비 08</h3>
-<p>삼일정공 공장에 설치된 실제 가공 설비입니다.</p>
-</div>
-</article>
-</section>
-<section class="notice"><div class="notice-mark">✓</div><div><h3>직접 설계하고, 직접 가공합니다.</h3><p>작업 목적과 부품의 특성을 고려해 제작·가공·수리 작업을 진행합니다. 필요한 설비 및 작업에 대해 편하게 문의해 주세요.</p></div></section>
-<section class="contact-banner">
-<h2>필요한 부품, 함께 해결하겠습니다.</h2><p>기계 부품 제작 · 가공 · 수리 문의</p>
-<div class="contact-buttons"><a href="tel:0438771796">전화 043-877-1796</a><a class="secondary" href="https://naver.me/GzdcifqP" target="_blank" rel="noopener noreferrer">오시는 길</a></div>
-</section>
-</main>
-<footer>
-<p><strong>삼일정공</strong></p><p>충청북도 음성군 대소읍 오태로 42-14</p>
-<p>전화 <a href="tel:0438771796">043-877-1796</a> · 휴대전화 <a href="tel:01054921796">010-5492-1796</a></p>
-<p>이메일: samil1796@naver.com</p><p>© 삼일정공. All rights reserved.</p>
-</footer>
-</body></html>
+  <main>
+    <section class="hero" aria-label="삼일정공 메인 화면">
+  <picture>
+  <a class="brand-logo" href="index.html" aria-label="삼일정공 홈">
+  <img src="samil-logo.png" alt="삼일정공">
+  </a>
+  <source
+    media="(max-width: 700px)"
+    srcset="main-mobile.png"
+  >
+  <img
+    src="main-bg.png"
+    alt="삼일정공 기계부품 제작·가공·수리"
+  >
+  </picture>
+
+
+      <!-- 이미지 속 메뉴 클릭 영역 -->
+      <a class="hotspot about-link"
+         href="about.html"
+         aria-label="회사소개"></a>
+
+      <a class="hotspot services-link"
+         href="services.html"
+         aria-label="주요업무"></a>
+
+      <a class="hotspot equipment-link"
+         href="equipment.html"
+         aria-label="설비현황"></a>
+
+      <a class="hotspot map-link"
+         href="location.html"
+         aria-label="오시는 길"></a>
+
+      <!-- 사무실 전화 연결 -->
+      <a class="hotspot office-phone-link"
+         href="tel:0438771796"
+         aria-label="사무실 전화 043-877-1796"></a>
+
+      <!-- 주요업무 보기 버튼 부분만 클릭 가능 -->
+      <a class="hotspot main-services-link"
+         href="services.html"
+         aria-label="주요업무 보기"></a>
+      <!-- 모바일 전용 전화문의 클릭 영역 -->
+<a class="mobile-hotspot mobile-phone"
+   href="tel:0438771796"
+   aria-label="사무실 전화 043-877-1796"></a>
+
+<!-- 모바일 전용 오시는 길 클릭 영역 -->
+<a class="mobile-hotspot mobile-map"
+   href="location.html"
+   aria-label="오시는 길"></a>
+
+<!-- 모바일 전용 주요업무 보기 클릭 영역 -->
+<a class="mobile-hotspot mobile-services"
+   href="services.html"
+   aria-label="주요업무 보기"></a>  
+
+<a class="mobile-hotspot mobile-about"
+   href="about.html"
+   aria-label="회사소개"></a>
+
+<a class="mobile-hotspot mobile-nav-services"
+   href="services.html"
+   aria-label="주요업무"></a>
+
+<a class="mobile-hotspot mobile-equipment"
+   href="equipment.html"
+   aria-label="설비현황"></a>
+    </section>
+  </main>
+
+  <footer class="contact-footer">
+    <strong>삼일정공</strong><br>
+    충청북도 음성군 대소읍 오태로 42-14
+
+    <div class="contact-line">
+      <span>
+        사무실:
+        <a href="tel:0438771796">043-877-1796</a>
+      </span>
+
+      <span>
+        휴대폰:
+        <a href="tel:01054921796">010-5492-1796</a>
+      </span>
+      <span>
+        이메일: samil1796@naver.com
+      </span>
+    </div>
+
+    <div>© 삼일정공. All rights reserved.</div>
+  </footer>
+</body>
+</html>
